@@ -43,5 +43,5 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: |
-            ${{ secrets.DOCKER_HUB_USERNAME}}/{docker_repository}:${{ github.sha }}
-            ${{ secrets.DOCKER_HUB_USERNAME}}/{docker_repository}:latest
+            ${{ secrets.DOCKER_HUB_USERNAME}}/erdaifuu.com:${{ github.sha }}
+            ${{ secrets.DOCKER_HUB_USERNAME}}/erdaifuu.com:latest
