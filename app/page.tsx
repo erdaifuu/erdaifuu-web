@@ -1,21 +1,54 @@
 import { BlogPosts } from 'app/components/posts'
+import { LatestBlogFeature } from 'app/components/posts'
+import { Popup } from 'app/components/popup'
+import { PopupCanvas } from 'app/components/popup-canvas'
 
 export default function Page() {
   return (
-    <section>
-      <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
-        My Portfolio
-      </h1>
-      <p className="mb-4">
-        {`I'm a Vim enthusiast and tab advocate, finding unmatched efficiency in
-        Vim's keystroke commands and tabs' flexibility for personal viewing
-        preferences. This extends to my support for static typing, where its
-        early error detection ensures cleaner code, and my preference for dark
-        mode, which eases long coding sessions by reducing eye strain.`}
-      </p>
-      <div className="my-8">
-        <BlogPosts />
-      </div>
-    </section>
+    <PopupCanvas>
+      <Popup
+        title="About"
+        initialPosition={{ top: 160, left: 32 }}
+        width="24rem"
+        initialZIndex={9}
+      >
+        <p className="text-sm p-4">
+          I'm a Vim enthusiast and tab advocate...
+        </p>
+      </Popup>
+
+      <Popup
+        variant="text"
+        initialPosition={{ top: 0, left: 0 }}
+        initialZIndex={10}
+        className="bg-transparent shadow-none"
+      >
+        <div className="bg-transparent p-0">
+          <h1 className="text-2xl font-semibold tracking-tighter">
+            Erdaifu (Carl) Luo
+          </h1>
+        </div>
+      </Popup>
+
+
+      <Popup
+        initialPosition={{ top: 0, left: 0 }}
+        className="bg-transparent shadow-none border-none"
+        initialZIndex={30}
+      >
+        <h1 className="text-2xl font-semibold tracking-tighter">
+          Erdaifu (Carl) Luo
+        </h1>
+      </Popup>
+
+      <Popup
+        title="Newest blog post :)"
+        initialPosition={{ top: 48, right: 20 }}
+        width="20rem"
+        zIndex={10}
+      >
+        <LatestBlogFeature />
+      </Popup>
+    </PopupCanvas>
   )
 }

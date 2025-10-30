@@ -1,5 +1,23 @@
 @import 'tailwindcss';
 
+@font-face {
+  font-family: 'Palatino';
+  src: url('/fonts/Palatino.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MaShanZheng';
+  src: url('/fonts/MaShanZheng.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Palatino', serif;
+}
+
 ::selection {
   background-color: #47a3f3;
   color: #fefefe;
@@ -138,13 +156,90 @@ input[type='email'] {
   appearance: none;
 }
 
-table {
-  display: block;
-  max-width: fit-content;
+.prose table {
+  @apply w-full border-collapse my-6;
+  border: 1px solid theme('colors.neutral.200');
+  display: table;
+  max-width: 100%;
   overflow-x: auto;
-  white-space: nowrap;
+  white-space: normal;
+}
+
+@media (prefers-color-scheme: dark) {
+  .prose table {
+    border-color: theme('colors.neutral.800');
+  }
+}
+
+.prose thead {
+  @apply bg-neutral-50;
+}
+
+@media (prefers-color-scheme: dark) {
+  .prose thead {
+    @apply bg-neutral-900;
+  }
+}
+
+.prose th {
+  @apply border border-neutral-200 px-4 py-2 text-left font-semibold;
+  max-width: 300px;
+  word-wrap: break-word;
+}
+
+@media (prefers-color-scheme: dark) {
+  .prose th {
+    @apply border-neutral-800;
+  }
+}
+
+.prose td {
+  @apply border border-neutral-200 px-4 py-2;
+  max-width: 300px;
+  word-wrap: break-word;
+}
+
+@media (prefers-color-scheme: dark) {
+  .prose td {
+    @apply border-neutral-800;
+  }
+}
+
+.prose tbody tr:hover {
+  @apply bg-neutral-50;
+}
+
+@media (prefers-color-scheme: dark) {
+  .prose tbody tr:hover {
+    @apply bg-neutral-900/50;
+  }
+}
+
+.prose blockquote {
+  @apply border-l-4 border-neutral-300 dark:border-neutral-700 pl-4 my-4 italic text-neutral-700 dark:text-neutral-400;
+}
+
+.prose blockquote p {
+  @apply my-2;
 }
 
 .title {
   text-wrap: balance;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.polaroid-caption {
+  font-family: 'MaShanZheng', cursive;
+  transform: rotate(-1deg);
+  letter-spacing: 0.02em;
 }
