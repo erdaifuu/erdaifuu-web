@@ -45,3 +45,15 @@ jobs:
           tags: |
             ${{ secrets.DOCKER_HUB_USERNAME}}/erdaifuu.com:${{ github.sha }}
             ${{ secrets.DOCKER_HUB_USERNAME}}/erdaifuu.com:latest
+
+
+      - name: Deploy to remote server 🧭
+        uses: appleboy/ssh-action@v0.1.10
+        with:
+          host: ${{ secrets.DEPLOY_HOST }}
+          username: ${{ secrets.DEPLOY_USER }}
+          key: ${{ secrets.DEPLOY_SSH_KEY }}
+          script: |
+            cd /public_html
+            docker compose pull
+            docker compose up -d --force-recreate

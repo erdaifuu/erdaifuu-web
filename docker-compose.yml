@@ -1,0 +1,5 @@
+services:
+  web:
+    image: erdaifuu/erdaifuu.com:latest
+    ports:
+      - "3000:3000"
