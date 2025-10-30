@@ -34,7 +34,7 @@ export default function Page() {
         title=" "
         initialPosition={{ top: 48, left: 620 }}
         width="20rem"
-        zIndex={10}
+        initialZIndex={10}
       >
         <LatestBlogFeature />
       </Popup>
@@ -43,7 +43,7 @@ export default function Page() {
         title=" "
         initialPosition={{ top: -47, left: -18 }}
         width="20rem"
-        zIndex={10}
+        initialZIndex={10}
       >
         <TreasureChest />
       </Popup>
