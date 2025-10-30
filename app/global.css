@@ -245,7 +245,7 @@ body {
 }
 
 /* TODO: if i ever want the background to not change while I scroll, add html before this */
-html, body {
+body {
   height: 100%;
   overflow-x: hidden;
   overflow-y: auto;
