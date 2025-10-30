@@ -8,7 +8,7 @@ type CanvasProps = {
 
 export function PopupCanvas({ children }: CanvasProps) {
   return (
-    <section className="relative min-h-screen w-full pb-20">
+    <section className="relative h-80 w-full">
       {children}
     </section>
   )

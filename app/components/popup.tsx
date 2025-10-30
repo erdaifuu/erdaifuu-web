@@ -12,7 +12,7 @@ type Position = {
 type PopupProps = {
   children: ReactNode
   title?: string
-  variant?: 'image' | 'text'
+  variant?: 'image' | 'text' | 'chest'
   initialPosition: Position
   width?: string
   initialZIndex?: number
@@ -97,8 +97,20 @@ export function Popup({
       style={positionStyles}
       onMouseDown={handleMouseDown}
     >
+    {/* Tape */ }
+      <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-16 h-6 bg-neutral-200/60 dark:bg-neutral-300/60 shadow-sm rotate-2 z-[-1]" />
+
       {/* Polaroid Container */}
-      <div className="bg-white dark:bg-neutral-100 p-3 shadow-2xl">
+      {/* Chest if */}
+      <div className="bg-white dark:bg-neutral-100 p-3 shadow-2xl"
+        style={
+          variant === 'chest'
+            ? { 
+            /* TODO: fix chest backgroundImage being too dark */
+              backgroundImage: "url('/images/general/chest.jpg')",
+            }
+            : {}
+        }>
         {/* Content Area */}
         <div className={
           variant === 'text'

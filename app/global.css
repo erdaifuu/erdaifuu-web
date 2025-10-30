@@ -243,3 +243,17 @@ body {
   transform: rotate(-1deg);
   letter-spacing: 0.02em;
 }
+
+/* TODO: if i ever want the background to not change while I scroll, add html before this */
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+body {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
