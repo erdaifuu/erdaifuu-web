@@ -54,6 +54,6 @@ jobs:
           username: ${{ secrets.DEPLOY_USER }}
           key: ${{ secrets.DEPLOY_SSH_KEY }}
           script: |
-            cd /public_html
+            cd public_html
             docker compose pull
             docker compose up -d --force-recreate
