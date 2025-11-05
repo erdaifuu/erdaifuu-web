@@ -11,7 +11,7 @@ type Position = {
 
 type PopupProps = {
   children: ReactNode
-  title?: string
+  title?: ReactNode
   variant?: 'image' | 'text' | 'chest'
   initialPosition: Position
   width?: string
@@ -122,13 +122,13 @@ export function Popup({
         
         {/* Caption Area */}
         {title && (
-          <div className="pt-4 pb-3 px-2">
-            <p className="text-sm md:text-base text-neutral-800 text-center font-['MaShanZheng']">
+          <div className="pt-5 pb-2 px-2">
+            <div className="text-sm md:text-base text-neutral-800 text-center font-['MaShanZheng'] max-h-0 flex items-center justify-center">
               {title}
-            </p>
+            </div>
           </div>
         )}
-      </div>
+     </div>
     </div>
   )
 }

@@ -10,8 +10,13 @@ export default function Page() {
   return (
     <PopupCanvas>
       <Popup
-        title=" "
-        initialPosition={{ top: 246, left: -22 }}
+        title=<img 
+            src="/images/general/contact-text.png" 
+            alt="Contacts"
+            className="object-contain h-full"
+            width="120"
+          />
+        initialPosition={{ top: 286, left: -22 }}
         initialZIndex={9}
       >
         <Contacts />
@@ -31,7 +36,13 @@ export default function Page() {
       </Popup> */}
 
       <Popup
-        title=" "
+        title=<img 
+            // change this to "Newest blog post"
+            src="/images/general/blog-text.png" 
+            alt="Blog"
+            className="object-contain h-full"
+            width="70"
+          />
         initialPosition={{ top: 48, left: 620 }}
         width="20rem"
         initialZIndex={10}
@@ -40,8 +51,14 @@ export default function Page() {
       </Popup>
 
       <Popup
-        title=" "
-        initialPosition={{ top: -47, left: -18 }}
+        title=<img 
+            // Change this to All my friends!
+            src="/images/general/treasure-text.png" 
+            alt="Contacts"
+            className="object-contain h-full"
+            width="130"
+          />
+        initialPosition={{ top: -7, left: -18 }}
         width="20rem"
         initialZIndex={10}
       >

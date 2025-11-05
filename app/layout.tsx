@@ -67,7 +67,7 @@ export default function RootLayout({
             </h1>
           </Link>
         </Popup>
-        <div className="min-h-screen flex items-center justify-center p-4 md:p-8 lg:p-12">
+        <div className="min-h-screen flex items-start justify-center p-4 md:p-8 lg:p-12">
           <div className="bg-white dark:bg-black shadow-2xl max-w-4xl w-full min-h-[85vh] p-8 md:p-12">
             <main className="flex-auto min-w-0 flex flex-col">
               <Navbar />

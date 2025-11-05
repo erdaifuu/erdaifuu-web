@@ -5,9 +5,12 @@ Personal portfolio / fun website built in Next.js. Some major features are still
 
 TODO: 
 - [ ] Fix page for mobile / different resolutions
-- [ ] Make /about pretty
+- [x] Make /about pretty
 - [ ] Implement /projects
+- [ ] Take a better pumidor pic
 - [ ] Implement tea.erdaifuu.com
+- [ ] Clean up /blog
+- [ ] Make individual blogs better to read
 
 
 Also check out [https://erdaifuu.substack.com/](https://erdaifuu.substack.com/)!
