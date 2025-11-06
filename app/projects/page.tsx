@@ -2,7 +2,7 @@ import { Card } from 'app/components/card'
 
 export default function Page() {
   return (
-    <div className="grid grid-cols-3 gap-4">
+    <div className="grid grid-cols-3 gap-4 items-center">
       <Card 
         title="My Homelab" 
         description={[

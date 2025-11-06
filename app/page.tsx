@@ -16,7 +16,7 @@ export default function Page() {
             className="object-contain h-full"
             width="120"
           />
-        initialPosition={{ top: 286, left: 0 }}
+        initialPosition={{ top: 300, left: 0 }}
         initialZIndex={9}
       >
         <Contacts />
@@ -45,7 +45,7 @@ export default function Page() {
             className="object-contain h-full"
             width="130"
           />
-        initialPosition={{ top: 0, left: 0 }}
+        initialPosition={{ top: -20, left: 0 }}
         width="20rem"
         initialZIndex={10}
       >

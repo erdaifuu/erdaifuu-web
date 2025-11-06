@@ -56,10 +56,10 @@ export default function RootLayout({
     >
       <body className="antialiased bg-[url('/images/general/background.jpg')] bg-cover bg-center bg-fixed min-h-screen">
         <div className="min-h-screen flex items-center justify-center p-4 md:p-8 lg:p-12">
-          <div className="bg-white shadow-2xl max-w-4xl w-full min-h-[85vh] p-8 md:p-12 relative">
+          <div className="bg-white shadow-2xl max-w-[120vh] w-full min-h-[85vh] p-8 md:p-12 relative">
             <Popup
               variant="text"
-              initialPosition={{ top: -40, left: 60 }}
+              initialPosition={{ top: -25, left: 60 }}
               initialZIndex={100}
               className="bg-transparent shadow-none"
             >

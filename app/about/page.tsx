@@ -40,8 +40,6 @@ export default function Page() {
             More specifically, I focus on{" "}
             <a
               href="https://www.babelcarp.org/babelcarp/babelcarp.cgi?phrase=dancong&define=1"
-              // className="text-yellow-500 font-bold underline hover:text-yellow-600"
-              // className="font-bold underline"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -50,8 +48,6 @@ export default function Page() {
             and {" "}
             <a
               href="https://www.babelcarp.org/babelcarp/babelcarp.cgi?phrase=shengpuercha"
-              // className="text-orange-600 font-bold underline hover:text-orange-700"
-              // className="font-bold underline"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -70,10 +66,10 @@ export default function Page() {
           </p>
         </section>
       </div>
-      <div className="w-full md:w-2/5 relative">
+      <div className="w-full md:w-2/5 relative min-h-[400px]">
         <Popup
           title=" "
-          initialPosition={{ top: -125, left: 15 }}
+          initialPosition={{ top: -130, left: 0 }}
           width="15rem"
           initialZIndex={10}
         >
@@ -86,7 +82,7 @@ export default function Page() {
 
         <Popup
           title=" "
-          initialPosition={{ top: 197, left: 133 }}
+          initialPosition={{ top: 180, left: 140 }}
           width="15rem"
           initialZIndex={11}
         >
@@ -100,4 +96,3 @@ export default function Page() {
     </div>
   )
 }
-
