@@ -16,24 +16,11 @@ export default function Page() {
             className="object-contain h-full"
             width="120"
           />
-        initialPosition={{ top: '32.5vh', left: '-1.15vw' }}
+        initialPosition={{ top: 286, left: 0 }}
         initialZIndex={9}
       >
         <Contacts />
       </Popup>
-
-      {/* <Popup
-        variant="text"
-        initialPosition={{ top: -225, left: 0 }}
-        initialZIndex={10}
-        className="bg-transparent shadow-none"
-      >
-        <Link href="/" className="cursor-pointer hover:opacity-80 transition-opacity">
-          <h1 className="text-2xl font-semibold tracking-tighter">
-            Erdaifu (Carl) Luo
-          </h1>
-        </Link>
-      </Popup> */}
 
       <Popup
         title=<img 
@@ -43,7 +30,7 @@ export default function Page() {
             className="object-contain h-full"
             width="70"
           />
-        initialPosition={{ top: '4.4vh', left: '38.3vw' }}
+        initialPosition={{ top: 20, right: 0 }}
         width="20rem"
         initialZIndex={10}
       >
@@ -58,7 +45,7 @@ export default function Page() {
             className="object-contain h-full"
             width="130"
           />
-        initialPosition={{ top: '-0.65vh', left: '-0.94vw' }}
+        initialPosition={{ top: 0, left: 0 }}
         width="20rem"
         initialZIndex={10}
       >
