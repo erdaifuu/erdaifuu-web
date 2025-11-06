@@ -52,12 +52,12 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className="text-black bg-white dark:text-white dark:bg-black"
+      className="text-black bg-white"
     >
       <body className="antialiased bg-[url('/images/general/background.jpg')] bg-cover bg-center bg-fixed min-h-screen">
       <Popup
           variant="text"
-          initialPosition={{ top: 30, left: 270 }}
+          initialPosition={{ top: '3vh', left: '20vw' }}
           initialZIndex={100}
           className="bg-transparent shadow-none"
         >
@@ -68,7 +68,7 @@ export default function RootLayout({
           </Link>
         </Popup>
         <div className="min-h-screen flex items-start justify-center p-4 md:p-8 lg:p-12">
-          <div className="bg-white dark:bg-black shadow-2xl max-w-4xl w-full min-h-[85vh] p-8 md:p-12">
+          <div className="bg-white shadow-2xl max-w-4xl w-full min-h-[85vh] p-8 md:p-12">
             <main className="flex-auto min-w-0 flex flex-col">
               <Navbar />
               {children}

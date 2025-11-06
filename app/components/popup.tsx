@@ -3,10 +3,10 @@
 import { ReactNode, useState, useRef, useEffect } from 'react'
 
 type Position = {
-  top?: number
-  bottom?: number
-  left?: number
-  right?: number
+  top?: number | string
+  bottom?: number | string
+  left?: number | string
+  right?: number | string
 }
 
 type PopupProps = {
@@ -41,14 +41,34 @@ export function Popup({
     setZIndex(globalMaxZIndex)
   }
 
+  // Convert viewport units to pixels
+  const convertToPixels = (value: number | string | undefined, dimension: 'width' | 'height'): number => {
+    if (value === undefined) return 0
+    if (typeof value === 'number') return value
+    
+    const numValue = parseFloat(value)
+    if (value.includes('vw')) {
+      return (numValue / 100) * window.innerWidth
+    } else if (value.includes('vh')) {
+      return (numValue / 100) * window.innerHeight
+    } else if (value.includes('%')) {
+      const container = dimension === 'width' ? window.innerWidth : window.innerHeight
+      return (numValue / 100) * container
+    }
+    return parseFloat(value) || 0
+  }
+
   const handleMouseDown = (e: React.MouseEvent) => {
     bringToFront()
     
     setIsDragging(true)
-    const currentLeft = position.left !== undefined ? position.left : 
-                       (window.innerWidth - (position.right || 0))
-    const currentTop = position.top !== undefined ? position.top : 
-                      (window.innerHeight - (position.bottom || 0))
+    
+    const currentLeft = position.left !== undefined 
+      ? convertToPixels(position.left, 'width')
+      : (window.innerWidth - convertToPixels(position.right, 'width'))
+    const currentTop = position.top !== undefined 
+      ? convertToPixels(position.top, 'height')
+      : (window.innerHeight - convertToPixels(position.bottom, 'height'))
     
     setDragStart({
       x: e.clientX - currentLeft,
@@ -82,10 +102,18 @@ export function Popup({
   }, [isDragging, dragStart])
 
   const positionStyles = {
-    top: position.top !== undefined ? `${position.top}px` : undefined,
-    bottom: position.bottom !== undefined ? `${position.bottom}px` : undefined,
-    left: position.left !== undefined ? `${position.left}px` : undefined,
-    right: position.right !== undefined ? `${position.right}px` : undefined,
+    top: position.top !== undefined 
+      ? (typeof position.top === 'number' ? `${position.top}px` : position.top)
+      : undefined,
+    bottom: position.bottom !== undefined 
+      ? (typeof position.bottom === 'number' ? `${position.bottom}px` : position.bottom)
+      : undefined,
+    left: position.left !== undefined 
+      ? (typeof position.left === 'number' ? `${position.left}px` : position.left)
+      : undefined,
+    right: position.right !== undefined 
+      ? (typeof position.right === 'number' ? `${position.right}px` : position.right)
+      : undefined,
     width: width,
     zIndex: zIndex,
   }
@@ -98,11 +126,11 @@ export function Popup({
       onMouseDown={handleMouseDown}
     >
     {/* Tape */ }
-      <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-16 h-6 bg-neutral-200/60 dark:bg-neutral-300/60 shadow-sm rotate-2 z-[-1]" />
+      <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-16 h-6 bg-neutral-200/60 shadow-sm rotate-2 z-[-1]" />
 
       {/* Polaroid Container */}
       {/* Chest if */}
-      <div className="bg-white dark:bg-neutral-100 p-3 shadow-2xl"
+      <div className="bg-white p-3 shadow-2xl"
         style={
           variant === 'chest'
             ? { 
@@ -115,7 +143,7 @@ export function Popup({
         <div className={
           variant === 'text'
             ? 'bg-white w-full flex items-center justify-center'
-            : 'bg-neutral-100 dark:bg-neutral-200 w-full'
+            : 'bg-neutral-100 w-full'
         }>
           {children}
         </div>
