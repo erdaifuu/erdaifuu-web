@@ -54,7 +54,7 @@ export default function RootLayout({
       lang="en"
       className="text-black bg-white"
     >
-      <body className="antialiased bg-[url('/images/general/background.jpg')] bg-cover bg-center bg-fixed min-h-screen">
+      <body className="antialiased bg-[url('/images/general/background-3.jpg')] bg-cover bg-center bg-fixed min-h-screen">
         <div className="min-h-screen flex items-center justify-center p-4 md:p-8 lg:p-12">
           <div className="bg-white shadow-2xl max-w-4xl w-full min-h-[85vh] p-8 md:p-12 relative">
             <Popup
