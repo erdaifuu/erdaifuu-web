@@ -9,7 +9,7 @@ on:
 jobs:
   push_to_registries:
     name: Push personal website to Docker Hub
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     permissions:
       packages: write
       contents: read
@@ -48,12 +48,7 @@ jobs:
 
 
       - name: Deploy to remote server
-        uses: appleboy/ssh-action@v0.1.10
-        with:
-          host: ${{ secrets.DEPLOY_HOST }}
-          username: ${{ secrets.DEPLOY_USER }}
-          key: ${{ secrets.DEPLOY_SSH_KEY }}
-          script: |
-            cd public_html
-            docker compose pull
-            docker compose up -d --force-recreate
+        run : |
+          cd public_html
+          docker compose pull
+          docker compose up -d --force-recreate
