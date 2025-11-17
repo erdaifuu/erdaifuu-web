@@ -49,6 +49,5 @@ jobs:
 
       - name: Deploy to remote server
         run : |
-          docker compose down web
           docker compose pull web
           docker compose up -d --force-recreate web
