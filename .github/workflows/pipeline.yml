@@ -49,6 +49,5 @@ jobs:
 
       - name: Deploy to remote server
         run : |
-          cd public_html
-          docker compose pull
-          docker compose up -d --force-recreate
+          docker compose pull web
+          docker compose up -d --force-recreate web
