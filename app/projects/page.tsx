@@ -6,24 +6,25 @@ export default function Page() {
       <Card 
         title="My Homelab" 
         description={[
-          "Status",
-          "Virtualized infrastructure using Proxmox, hoses multiple Debian VMs and containers that runs everything",
-          "Hosts this website, movie streaming services, notes, reverse proxy, authentik, and more"
+          <><a href="https://uptime.t.erdaifuu.com/status/homelab" className="font-bold underline">Status</a></>,
+          <>Virtualized infrastructure using Proxmox, hoses multiple Debian VMs and containers that runs everything</>,
+          <>Hosts this website, media services, notes, reverse proxy, authentik, and more</>
         ]} 
       />
       <Card 
         title="image-from-url"
         description={[
-          "Source code",
-          "Built a TrueType font parser to decode glyphs from .ttf files, then process and render them into a bitmap.",
+          <><a href="https://codeberg.org/func/image-from-url" className="font-bold underline">Source code</a></>,
+          <>Built a TrueType font parser to decode glyphs from .ttf files, then process and render them into a bitmap.</>,
         ]} 
       />
       <Card 
         title="This website" 
         description={[
-          "Source code",
-          "Built with Next.js and Tailwind",
-          "You can drag the little polaroid components around!"
+          <><a href="https://github.com/erdaifuu/erdaifuu.com" className="font-bold underline">Source code</a></>,
+          <>Built with Next.js and Tailwind</>,
+          <>Served from my homelab with docker and a reverse proxy</>,
+          <>You can drag the little polaroid components around!</>
         ]} 
       />
     </div>

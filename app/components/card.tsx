@@ -1,6 +1,6 @@
 type CardProps = {
   title?: string
-  description?: string[]
+  description?: React.ReactNode[]
 }
 
 export function Card({ title, description }: CardProps) {
